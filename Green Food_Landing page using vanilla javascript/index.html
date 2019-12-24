@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Green Foods</title>
+</head>
+<body>
+    <!-- Container -->
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <a href="#" class="logo">Good<span>Foods</span></a>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <span class="menuIcon"><a href="#"><i class="fas fa-bars"></i></a></span>
+        </header>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Text -->
+            <div class="bannerText" id="slideshowText">
+                <div class="active">
+                    <h2>EAT Healthy<br>Stay Healthy</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio eos enim qui rem quod. Quibusdam, suscipit eligendi earum unde nesciunt id porro possimus sit doloribus minus delectus amet sint odio!</p>
+                    <a href="#">Read More</a>
+                </div>
+                <div>
+                    <h2>Eat Your</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, beatae. Porro libero deleniti dolore itaque repellat ducimus voluptates odit et, quos, eius exercitationem, ipsam iure numquam nostrum aliquam tenetur maiores!</p>
+                    <a href="#">Read More</a>
+                </div>
+                <div>
+                    <h2>Good Food</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus praesentium modi odio fuga, voluptatibus voluptatem hic deserunt velit architecto sed.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <!-- Image -->
+            <div class="bannerImg" id="slideshow">
+                <img src="./images/pexels-photo-1143754.jpeg" alt="bannerImg2" class="active">
+                <img src="./images/1.jpeg" alt="bannerImg1">
+                <img src="./images/pexels-photo-434258.jpeg" alt="bannerImg3">
+            </div>
+        </div>
+        <div class="icons">
+            <ul class="sci">
+                <li><a href="#"><img src="./icons/facebook-logo.png" alt="facebook"></a></li>
+                <li><a href="#"><img src="./icons/twitter.png" alt="twitter"></a></li>
+                <li><a href="#"><img src="./icons/instagram.png" alt="instagram"></a></li>
+            </ul>
+            <ul class="controls">
+                <li class="left"><a href="#" onclick="prevSlide();prevSlideText();"><i class="fas fa-chevron-left"></i></a></li>
+                <li class="right"><a href="#" onclick="nextSlide();nextSlideText();"><i class="fas fa-chevron-right"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var slideshow = document.getElementById('slideshow');
+        var slides = slideshow.getElementsByTagName('img');
+        var index = 0;
+
+        function nextSlide() {
+            slides[index].classList.remove('active');
+            index = (index + 1) % slides.length;
+            slides[index].classList.add('active');
+        }
+
+        function prevSlide() {
+            slides[index].classList.remove('active');
+            index = (index - 1 + slides.length) % slides.length;
+            slides[index].classList.add('active');
+        }
+
+        var slideshowText = document.getElementById('slideshowText');
+        var slidesText = slideshowText.getElementsByTagName('div');
+        var i = 0;
+
+        function nextSlideText() {
+            slidesText[i].classList.remove('active');
+            i = (i + 1) % slidesText.length;
+            slidesText[i].classList.add('active');
+        }
+
+        function prevSlideText() {
+            slidesText[i].classList.remove('active');
+            i = (i - 1 + slidesText.length) % slidesText.length;
+            slidesText[i].classList.add('active');
+        }
+    </script>
+</body>
+</html>
